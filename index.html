@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>All You Need to Succeed: plan your future in 10 minutes | EGLD Money</title>
+<meta name="description" content="Answer 11 questions and get your personal success blueprint: life score, money projection, income ideas, a 90-day plan, a daily routine and books to read. Plus 7 free life-planning tools.">
+<link rel="canonical" href="https://egldmoney.com/">
+<meta property="og:title" content="All You Need to Succeed – the life plan simulator">
+<meta property="og:description" content="Answer 11 questions, get your personal success blueprint.">
+<meta property="og:url" content="https://egldmoney.com/">
+<meta property="og:image" content="https://egldmoney.com/img/hero.jpg">
+<meta name="theme-color" content="#173F31">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F1F3EE; --surface:#FFFFFF; --soft:#E6EBE3; --ink:#12241D; --muted:#5B6B63; --line:#D5DDD3;
+  --forest:#173F31; --forest-2:#24624B; --gold:#C8952B; --gold-soft:#F4E6C6; --coral:#D2553F; --ok:#2E8A5C;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0D1814; --surface:#14231D; --soft:#1B2E26; --ink:#E9EFEA; --muted:#9DB0A6; --line:#2A4037;
+    --forest:#0F2C22; --forest-2:#3FA27B; --gold:#E3B455; --gold-soft:#3A2F17; --coral:#F07C66; --ok:#5CC98F;
+    color-scheme:dark;
+  }
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 "Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.serif{font-family:"DM Serif Display",Georgia,"Times New Roman",serif;font-weight:400;line-height:1.08;margin:0}
+h3{font-size:1.45rem}
+p{margin:0 0 .8rem}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 1.25rem}
+.tnum{font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+[hidden]{display:none!important}
+
+/* nav */
+.top{position:sticky;top:0;z-index:20;background:var(--forest);color:#fff;padding-top:env(safe-area-inset-top,0px)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--forest)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{text-decoration:none;display:flex;align-items:center;gap:.7rem;color:#fff}
+.logo{perspective:400px}
+.logo img{width:42px;height:42px;flex:none;border-radius:50%;box-shadow:0 0 0 1px rgba(241,207,126,.35),0 0 18px rgba(241,207,126,.35);transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.logo:hover img{transform:rotateY(360deg)}
+@media (prefers-reduced-motion:reduce){.logo img{transition:none}.logo:hover img{transform:none}}
+.wm{display:flex;flex-direction:column;line-height:1}
+.wm b{font:400 1.5rem "DM Serif Display",Georgia,serif;letter-spacing:.01em}
+.wm b span{color:#F1CF7E;font-style:italic}
+.wm small{font:700 .62rem "Plus Jakarta Sans",sans-serif;letter-spacing:.2em;text-transform:uppercase;opacity:.7;margin-top:.3rem}
+footer .logo{margin-bottom:1rem}
+footer .logo img{width:56px;height:56px}
+footer .wm b{font-size:1.9rem}
+@media (max-width:420px){.wm small{display:none}}
+
+/* email card */
+.mail{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:2rem;align-items:center;background:var(--gold-soft);border:1px solid var(--line);border-radius:24px;padding:1.8rem;margin-top:1.25rem}
+.mail h3{font-size:1.7rem}
+.mail p{margin:.4rem 0 0;color:var(--muted)}
+.mail form{display:flex;flex-direction:column;gap:.7rem}
+.mail .row{display:flex;gap:.6rem;flex-wrap:wrap}
+.mail .row .inp{flex:1;min-width:220px;background:var(--surface)}
+.mail label.ck{display:flex;gap:.55rem;align-items:flex-start;font-size:.88rem;color:var(--muted);cursor:pointer}
+.mail label.ck input{width:1.05rem;height:1.05rem;margin-top:.15rem;accent-color:var(--forest-2);flex:none}
+.mail .status{font-weight:700;font-size:.92rem;min-height:1.3em}
+.mail .status.ok{color:var(--ok)} .mail .status.bad{color:var(--coral)}
+@media (max-width:960px){.mail{grid-template-columns:1fr}}
+.top nav{display:flex;gap:1.6rem;font-weight:600;font-size:.95rem}
+.top nav a{text-decoration:none;opacity:.8}
+.top nav a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:0;cursor:pointer;border-radius:999px;font-weight:700;text-decoration:none;padding:.85rem 1.5rem;background:var(--gold);color:#1E1503;transition:transform .15s,filter .15s}
+.btn:hover{filter:brightness(1.06)}
+.btn:active{transform:scale(.98)}
+.btn.ghost{background:transparent;color:inherit;border:1.5px solid currentColor}
+.btn.dark{background:var(--forest);color:#fff}
+@media (prefers-color-scheme:dark){.btn.dark{background:var(--forest-2);color:#06130D}}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+
+/* art slots: drop images in /img with these names */
+.art{background-color:var(--forest);background-image:var(--img),radial-gradient(120% 90% at 20% 10%,var(--forest-2),var(--forest) 60%);background-size:cover;background-position:center;position:relative;overflow:hidden}
+
+/* hero */
+.hero{background:var(--forest);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:3rem;align-items:center;padding-top:3.5rem;padding-bottom:4.5rem}
+.hero h1{font-size:clamp(2.6rem,6vw,4.8rem)}
+.hero h1 em{color:#F1CF7E}
+.hero .lead{font-size:1.15rem;opacity:.85;max-width:46ch;margin:1.4rem 0 2rem}
+.hero .cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero-art{aspect-ratio:4/5;border-radius:220px 220px 24px 24px;--img:url(img/hero.jpg);box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.hero-art .badge{position:absolute;left:1rem;right:1rem;top:1rem;background:rgba(10,25,19,.75);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:16px;padding:1rem 1.1rem;font-size:.92rem}
+.hero-art .badge b{display:block;font:1.4rem "DM Serif Display",serif;color:#F1CF7E}
+.facts{display:flex;gap:2.2rem;margin-top:2.6rem;flex-wrap:wrap}
+.facts div{font-size:.9rem;opacity:.8}
+.facts b{display:block;font:2rem "DM Serif Display",serif;opacity:1;color:#fff}
+
+/* sections */
+section.block{padding:5.5rem 0 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;margin-bottom:2.2rem}
+.head h2{font-size:clamp(2rem,4.2vw,3.2rem);max-width:17ch}
+.head p{max-width:48ch;color:var(--muted);margin:0}
+
+/* simulator */
+.sim{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);background:var(--surface);border:1px solid var(--line);border-radius:28px;overflow:hidden;min-height:540px}
+.sim-art{--img:url(img/simulator.jpg);color:#fff;padding:1.75rem;display:flex;flex-direction:column;justify-content:flex-end}
+.sim-art::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,22,16,.85),rgba(8,22,16,.1) 60%)}
+.sim-art > *{position:relative}
+.sim-art .stepname{font:1.6rem "DM Serif Display",serif}
+.dots{display:flex;gap:5px;margin-top:1rem;flex-wrap:wrap}
+.dots i{width:22px;height:5px;border-radius:3px;background:rgba(255,255,255,.3)}
+.dots i.on{background:#F1CF7E}
+.sim-body{padding:2.2rem;display:flex;flex-direction:column}
+.qcount{font-weight:700;color:var(--gold);font-size:.9rem}
+.q{font-size:clamp(1.6rem,3vw,2.2rem);margin:.4rem 0 .5rem}
+.hint{color:var(--muted);margin-bottom:1.5rem;max-width:60ch}
+.answer{flex:1}
+.nav-row{display:flex;justify-content:space-between;align-items:center;margin-top:2rem;gap:1rem}
+.txt{width:100%;max-width:420px;border:0;border-bottom:2px solid var(--line);background:transparent;color:var(--ink);font:600 1.6rem "Plus Jakarta Sans",sans-serif;padding:.4rem 0;outline:none}
+.txt:focus{border-color:var(--gold)}
+.choices{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem}
+.choice{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:16px;padding:1rem 1.1rem;cursor:pointer;transition:border-color .15s,background .15s}
+.choice:hover{border-color:var(--forest-2)}
+.choice[aria-pressed=true]{border-color:var(--gold);background:var(--gold-soft)}
+.choice b{display:block;font-weight:700;margin-bottom:.15rem}
+.choice span{font-size:.88rem;color:var(--muted)}
+.sliders{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.3rem 2.2rem}
+.sl label{display:flex;justify-content:space-between;font-weight:700;margin-bottom:.3rem}
+.sl output{font:1.3rem "DM Serif Display",serif;color:var(--gold)}
+input[type=range]{width:100%;accent-color:var(--forest-2);height:1.6rem}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem 1.6rem}
+.fld label{display:block;font-weight:700;margin-bottom:.35rem;font-size:.95rem}
+.fld small{display:block;color:var(--muted);font-size:.82rem;margin-top:.3rem}
+.inp{display:flex;align-items:center;background:var(--bg);border:1.5px solid var(--line);border-radius:12px}
+.inp:focus-within{border-color:var(--gold)}
+.inp span{padding:0 .75rem;color:var(--muted);font-weight:700}
+.inp input,.inp select{flex:1;min-width:0;border:0;background:transparent;color:var(--ink);font:600 1.05rem "Plus Jakarta Sans",sans-serif;padding:.65rem .8rem;outline:none}
+.inp select option{color:#000}
+.err{color:var(--coral);font-weight:600;font-size:.92rem;min-height:1.4em;margin-top:.6rem}
+
+/* results */
+#results{margin-top:2.5rem}
+.res-hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2rem;align-items:center;background:var(--forest);color:#fff;border-radius:28px;padding:2.4rem;--img:url(img/blueprint.jpg)}
+.res-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,30,22,.95) 30%,rgba(10,30,22,.55))}
+.res-hero > *{position:relative}
+.res-hero h2{font-size:clamp(2rem,4.5vw,3.3rem)}
+.res-hero p{opacity:.85;max-width:56ch;margin-top:1rem;font-size:1.08rem}
+.ring{width:170px;height:170px}
+.ring text{font-family:"DM Serif Display",serif;fill:#fff}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;margin-top:1.25rem}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:1.8rem;min-width:0}
+.card h3{margin-bottom:.4rem}
+.card .sub{color:var(--muted);margin-bottom:1.2rem}
+.wide{grid-column:1/-1}
+.radar{width:100%;max-width:440px;display:block;margin:0 auto}
+.radar text{font:600 15px "Plus Jakarta Sans",sans-serif;fill:var(--muted)}
+.focus{background:var(--gold-soft);border-radius:16px;padding:1.1rem 1.2rem;margin-top:1rem}
+.focus b{display:block;font:1.3rem "DM Serif Display",serif;margin-bottom:.2rem}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:16px;margin-bottom:1.4rem}
+.stats div{padding:1rem 1.1rem}
+.stats div+div{border-left:1px solid var(--line)}
+.stats dt{font-size:.82rem;color:var(--muted);font-weight:600}
+.stats dd{margin:.25rem 0 0;font:1.55rem "DM Serif Display",serif}
+.chart{width:100%;height:auto;display:block}
+.chart text{font:600 11px "Plus Jakarta Sans",sans-serif;fill:var(--muted)}
+.legend{display:flex;gap:1.3rem;flex-wrap:wrap;font-size:.88rem;color:var(--muted);margin-top:.6rem}
+.legend i{display:inline-block;width:14px;height:4px;border-radius:2px;margin-right:.45rem;vertical-align:middle}
+.callout{border-left:4px solid var(--gold);padding:.3rem 0 .3rem 1rem;margin-top:1.2rem}
+.path{background:var(--bg);border-radius:18px;padding:1.3rem;display:flex;flex-direction:column;gap:.6rem}
+.path h4{margin:0;font-size:1.08rem}
+.path .meta{display:flex;flex-wrap:wrap;gap:.4rem}
+.pill{font-size:.78rem;font-weight:700;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:.2rem .65rem}
+.path .earn{font:1.5rem "DM Serif Display",serif;color:var(--forest-2)}
+.phase{background:var(--bg);border-radius:18px;padding:1.3rem}
+.phase .when{font-weight:800;color:var(--gold);font-size:.85rem}
+.phase h4{font:1.3rem "DM Serif Display",serif;margin:.2rem 0 .8rem}
+.phase ul,.checks{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem}
+.phase li,.checks li{display:flex;gap:.6rem;align-items:flex-start}
+.phase li::before,.checks li::before{content:"";flex:none;width:18px;height:18px;border:2px solid var(--forest-2);border-radius:5px;margin-top:.2rem}
+.timeline{display:flex;flex-direction:column}
+.slot{display:grid;grid-template-columns:70px minmax(0,1fr);gap:1rem;padding:.75rem 0;border-bottom:1px dashed var(--line)}
+.slot:last-child{border-bottom:0}
+.slot time{font-weight:800;color:var(--forest-2)}
+.slot b{display:block}
+.books{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem}
+.book{background:var(--bg);border-radius:14px;padding:1rem 1rem 1.1rem;border-top:5px solid var(--gold)}
+.book b{display:block;font:1.15rem "DM Serif Display",serif;line-height:1.2}
+.book span{font-size:.85rem;color:var(--muted)}
+.book p{font-size:.88rem;margin:.5rem 0 0}
+.res-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem}
+
+/* toolkit */
+.tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:26px;overflow:hidden;display:flex;flex-direction:column}
+.tool .art{height:170px;display:flex;align-items:flex-end;padding:1.2rem 1.5rem;color:#fff}
+.tool .art::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,22,16,.8),transparent 70%)}
+.tool .art h3{position:relative;font-size:1.7rem}
+.tool .body{padding:1.5rem;display:flex;flex-direction:column;gap:1rem;flex:1}
+.tool .body > p{color:var(--muted);margin:0}
+.tool .fields{grid-template-columns:repeat(2,minmax(0,1fr))}
+.result{background:var(--soft);border-radius:16px;padding:1.1rem 1.2rem;margin-top:auto}
+.result .num{font:2rem "DM Serif Display",serif;line-height:1.1}
+.result p{margin:.35rem 0 0;font-size:.95rem}
+.bar{display:flex;height:16px;border-radius:8px;overflow:hidden;margin-top:.8rem}
+.bar i{display:block;height:100%}
+.keys{display:flex;flex-wrap:wrap;gap:.4rem .9rem;font-size:.8rem;color:var(--muted);margin-top:.5rem}
+.keys span::before{content:"";display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:.35rem;background:var(--c)}
+.dec{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:.5rem;align-items:center;font-size:.9rem}
+.dec .h{font-weight:700;color:var(--muted);font-size:.8rem}
+.dec input{width:100%;min-width:0;background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:.5rem .6rem;font:600 .95rem "Plus Jakarta Sans",sans-serif;color:var(--ink)}
+.dec input:focus{outline:none;border-color:var(--gold)}
+.prompt{font:1.55rem/1.3 "DM Serif Display",serif;min-height:4.1em}
+
+/* footer */
+footer{margin-top:6rem;background:var(--forest);color:#fff;padding:3rem 0}
+footer .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:2rem}
+footer p{opacity:.75;font-size:.9rem;max-width:62ch}
+footer .copy{font-weight:800;letter-spacing:.06em;opacity:1;margin-bottom:.6rem}
+
+/* responsive */
+@media (max-width:960px){
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-art{max-width:420px;aspect-ratio:1/1;border-radius:200px 200px 24px 24px}
+  .sim{grid-template-columns:1fr}
+  .sim-art{min-height:200px}
+  .grid2,.grid3,.tools{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .stats div:nth-child(3){border-left:0}
+  .stats div:nth-child(n+3){border-top:1px solid var(--line)}
+  .res-hero{grid-template-columns:1fr}
+  .top nav{display:none}
+  footer .wrap{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .sliders,.fields,.tool .fields{grid-template-columns:1fr}
+  .sim-body,.card{padding:1.4rem}
+  .dec{grid-template-columns:minmax(0,1.2fr) repeat(3,minmax(0,1fr));font-size:.82rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+/* print: only the blueprint */
+@media print{
+  body{background:#fff;color:#000}
+  .top,.hero,#toolkitSec,footer,#simCard,.res-actions,.head{display:none!important}
+  #simSec{padding:0}
+  .card,.res-hero{break-inside:avoid;border:1px solid #ccc}
+  .res-hero{background:#173F31!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="EGLD Money, your financial freedom"><img src="img/logo-mark-128.png" alt="" width="42" height="42"><span class="wm"><b>EGLD <span>Money</span></b><small>Your financial freedom</small></span></a>
+    <nav aria-label="Main"><a href="#simSec">The simulator</a><a href="#toolkitSec">Success toolkit</a></nav>
+    <a class="btn" href="#simSec" style="padding:.55rem 1.1rem;font-size:.92rem">Plan my future</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>All you need to succeed, planned around <em>your</em> life.</h1>
+      <p class="lead">Answer 11 honest questions. Get a personal blueprint, sent straight to your inbox, with your life score, where your money is heading, income ideas that fit your skills, a 90-day plan and a daily routine you can start tomorrow.</p>
+      <div class="cta">
+        <a class="btn" href="#simSec">Start the simulator</a>
+        <a class="btn ghost" href="#toolkitSec">Browse the toolkit</a>
+      </div>
+      <div class="facts">
+        <div><b>11</b>questions</div>
+        <div><b>10 min</b>to your blueprint</div>
+        <div><b>7</b>extra tools</div>
+      </div>
+      <p style="margin:1.6rem 0 0;font-size:.9rem;opacity:.7">No account needed. Your plan is calculated in your browser.</p>
+    </div>
+    <div class="hero-art art" role="img" aria-label="A person looking out over a path at sunrise">
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="block" id="simSec" aria-labelledby="simTitle">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="simTitle">The future simulator</h2>
+      <p>The more honest your answers, the more useful your plan. You can go back and change anything.</p>
+    </div>
+
+    <div class="sim" id="simCard">
+      <div class="sim-art art">
+        <div class="stepname" id="stepName">About you</div>
+        <div class="dots" id="dots" aria-hidden="true"></div>
+      </div>
+      <div class="sim-body">
+        <div class="qcount" id="qCount">Question 1 of 11</div>
+        <h3 class="q" id="qText" tabindex="-1">…</h3>
+        <p class="hint" id="qHint"></p>
+        <div class="answer" id="answer"></div>
+        <div class="err" id="err" role="alert"></div>
+        <div class="nav-row">
+          <button class="btn ghost" id="back" type="button">Back</button>
+          <button class="btn dark" id="next" type="button">Next</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="results" hidden aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="block" id="toolkitSec" aria-labelledby="tkTitle">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="tkTitle">The success toolkit</h2>
+      <p>Seven tools for the questions that come after the plan. Everything updates as you type.</p>
+    </div>
+
+    <div class="tools">
+
+      <!-- 1 Compound -->
+      <article class="tool" aria-labelledby="t1">
+        <div class="art" style="--img:url(img/tool-habits.jpg);background-position:center 78%"><h3 id="t1">The compound effect</h3></div>
+        <div class="body">
+          <p>Small daily effort and small monthly savings look like nothing. Give them time.</p>
+          <div class="fields">
+            <div class="fld"><label for="cMonthly">Invest every month</label><div class="inp"><span>€</span><input id="cMonthly" type="number" min="0" value="200"></div></div>
+            <div class="fld"><label for="cYears">For how many years</label><div class="inp"><input id="cYears" type="number" min="1" max="60" value="20"><span>yrs</span></div></div>
+            <div class="fld"><label for="cRate">Yearly return</label><div class="inp"><input id="cRate" type="number" min="0" max="20" step="0.5" value="6"><span>%</span></div><small>Long-term stock market averages are often quoted around 5–8%. Not guaranteed.</small></div>
+            <div class="fld"><label for="cBetter">Get better every day by</label><div class="inp"><input id="cBetter" type="number" min="0" max="5" step="0.1" value="1"><span>%</span></div></div>
+          </div>
+          <div class="result" id="cOut"></div>
+        </div>
+      </article>
+
+      <!-- 2 Freedom -->
+      <article class="tool" aria-labelledby="t2">
+        <div class="art" style="--img:url(img/tool-freedom.jpg)"><h3 id="t2">Your freedom number</h3></div>
+        <div class="body">
+          <p>The amount you need invested to live from it, using the 4% rule: 25 times your yearly spending.</p>
+          <div class="fields">
+            <div class="fld"><label for="fExp">Monthly spending</label><div class="inp"><span>€</span><input id="fExp" type="number" min="0" value="2500"></div></div>
+            <div class="fld"><label for="fHave">Already invested</label><div class="inp"><span>€</span><input id="fHave" type="number" min="0" value="10000"></div></div>
+            <div class="fld"><label for="fSave">Invest per month</label><div class="inp"><span>€</span><input id="fSave" type="number" min="0" value="600"></div></div>
+            <div class="fld"><label for="fRate">Yearly return</label><div class="inp"><input id="fRate" type="number" min="0" max="20" step="0.5" value="6"><span>%</span></div></div>
+          </div>
+          <div class="result" id="fOut"></div>
+        </div>
+      </article>
+
+      <!-- 3 Week -->
+      <article class="tool" aria-labelledby="t3">
+        <div class="art" style="--img:url(img/tool-week.jpg)"><h3 id="t3">Your 168-hour week</h3></div>
+        <div class="body">
+          <p>Everyone gets the same 168 hours. See where yours go, and what’s really left.</p>
+          <div class="fields">
+            <div class="fld"><label for="wSleep">Sleep per night</label><div class="inp"><input id="wSleep" type="number" min="0" max="14" step="0.5" value="7.5"><span>h</span></div></div>
+            <div class="fld"><label for="wWork">Work + commute per week</label><div class="inp"><input id="wWork" type="number" min="0" max="100" value="45"><span>h</span></div></div>
+            <div class="fld"><label for="wChores">Chores, food, family per day</label><div class="inp"><input id="wChores" type="number" min="0" max="12" step="0.5" value="3"><span>h</span></div></div>
+            <div class="fld"><label for="wScreen">Phone + TV per day</label><div class="inp"><input id="wScreen" type="number" min="0" max="16" step="0.5" value="3.5"><span>h</span></div><small>Check your phone’s screen-time report for the real number.</small></div>
+          </div>
+          <div class="result" id="wOut"></div>
+        </div>
+      </article>
+
+      <!-- 4 Goal -->
+      <article class="tool" aria-labelledby="t4">
+        <div class="art" style="--img:url(img/tool-goal.jpg);background-position:center 40%"><h3 id="t4">Goal builder</h3></div>
+        <div class="body">
+          <p>Turn a wish into a goal with a number, a deadline and a weekly target.</p>
+          <div class="fields">
+            <div class="fld" style="grid-column:1/-1"><label for="gWhat">What do you want?</label><div class="inp"><input id="gWhat" type="text" value="Save for an emergency fund"></div></div>
+            <div class="fld"><label for="gAmount">How much, in numbers</label><div class="inp"><input id="gAmount" type="number" min="1" value="6000"></div></div>
+            <div class="fld"><label for="gUnit">Unit</label><div class="inp"><input id="gUnit" type="text" value="euros"></div></div>
+            <div class="fld"><label for="gNow">Where you are now</label><div class="inp"><input id="gNow" type="number" min="0" value="1500"></div></div>
+            <div class="fld"><label for="gDate">Deadline</label><div class="inp"><input id="gDate" type="date"></div></div>
+          </div>
+          <div class="result" id="gOut"></div>
+        </div>
+      </article>
+
+      <!-- 5 Decision -->
+      <article class="tool" aria-labelledby="t5">
+        <div class="art" style="--img:url(img/tool-decision.jpg)"><h3 id="t5">Decision maker</h3></div>
+        <div class="body">
+          <p>Stuck between two options? Score each one from 1 to 10 on what matters, and weigh how much it matters.</p>
+          <div class="dec" id="dec">
+            <span class="h">What matters</span><span class="h">Weight 1–5</span><span class="h"><input id="dA" value="Option A" aria-label="Name of option A"></span><span class="h"><input id="dB" value="Option B" aria-label="Name of option B"></span>
+          </div>
+          <div class="result" id="dOut"></div>
+        </div>
+      </article>
+
+      <!-- 6 Debt -->
+      <article class="tool" aria-labelledby="t6">
+        <div class="art" style="--img:url(img/tool-debt.jpg)"><h3 id="t6">Debt-free date</h3></div>
+        <div class="body">
+          <p>See when you’ll be free, what it costs you, and what a little extra each month changes.</p>
+          <div class="fields">
+            <div class="fld"><label for="bBal">What you owe</label><div class="inp"><span>€</span><input id="bBal" type="number" min="0" value="8000"></div></div>
+            <div class="fld"><label for="bRate">Interest per year</label><div class="inp"><input id="bRate" type="number" min="0" max="40" step="0.1" value="9.5"><span>%</span></div></div>
+            <div class="fld"><label for="bPay">You pay per month</label><div class="inp"><span>€</span><input id="bPay" type="number" min="0" value="250"></div></div>
+            <div class="fld"><label for="bExtra">Extra you could add</label><div class="inp"><span>€</span><input id="bExtra" type="number" min="0" value="100"></div></div>
+          </div>
+          <div class="result" id="bOut"></div>
+        </div>
+      </article>
+
+      <!-- 7 Reflection -->
+      <article class="tool wide" aria-labelledby="t7" style="grid-column:1/-1">
+        <div class="art" style="--img:url(img/tool-reflect.jpg);height:260px;background-position:center 35%"><h3 id="t7">Today’s question</h3></div>
+        <div class="body">
+          <p>One question a day, answered honestly, does more than a hundred motivational quotes. Write your answer down somewhere.</p>
+          <div class="prompt" id="pText" aria-live="polite"></div>
+          <div><button class="btn dark" id="pNew" type="button">Give me another question</button></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#" aria-label="EGLD Money, your financial freedom"><img src="img/logo-mark-128.png" alt="" width="42" height="42"><span class="wm"><b>EGLD <span>Money</span></b><small>Your financial freedom</small></span></a>
+      <p class="copy">© 2022–<span id="yr"></span> EGLD MONEY</p>
+      <p>All You Need to Succeed is a planning tool, not financial, legal or medical advice. Money projections use simple assumptions and are never guaranteed. Your answers are calculated in your browser and saved only on your own device. If you ask us to email your plan, your email address and plan are sent to our email provider (EmailJS) only to deliver it. You only get our newsletter if you tick that box, and you can unsubscribe at any time.</p>
+    </div>
+    <div>
+      <p>Interested in the egldmoney.com domain? <a href="mailto:borossergiu@gmail.com?subject=egldmoney.com">Get in touch</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var $=function(id){return document.getElementById(id);};
+var esc=function(s){return String(s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});};
+var eur=function(n){var a=Math.abs(n);return (n<0?"−":"")+"€"+Math.round(a).toLocaleString("en-US");};
+var num=function(v,d){v=parseFloat(v);return isFinite(v)?v:(d||0);};
+$("yr").textContent=new Date().getFullYear();
+
+/* ================= DATA ================= */
+var GOALS=[
+ {v:"freedom",l:"Financial freedom",d:"Never have to worry about money again"},
+ {v:"business",l:"Build my own business",d:"Be my own boss, make my own rules"},
+ {v:"career",l:"Grow in my career",d:"Better role, better pay, more respect"},
+ {v:"health",l:"Health and energy",d:"Feel strong, fit and awake every day"},
+ {v:"balance",l:"Calm and happiness",d:"Less stress, more of what matters"}
+];
+var AREAS=[
+ {k:"money",l:"Money"},{k:"career",l:"Work & career"},{k:"health",l:"Health & energy"},
+ {k:"love",l:"Relationships"},{k:"growth",l:"Personal growth"},{k:"fun",l:"Fun & free time"}
+];
+var SKILLS=[
+ {v:"programming",l:"Programming"},{v:"marketing",l:"Marketing & social media"},{v:"design",l:"Design"},
+ {v:"writing",l:"Writing"},{v:"video",l:"Photo & video"},{v:"sales",l:"Sales & talking to people"},
+ {v:"teaching",l:"Teaching & explaining"},{v:"handwork",l:"Practical, hands-on work"},
+ {v:"languages",l:"Speaking several languages"},{v:"finance",l:"Numbers & finance"}
+];
+var LEVELS=[{v:0,l:"Beginner",d:"I know the basics or I’m just starting"},{v:1,l:"Intermediate",d:"I could do paid work with some help"},{v:2,l:"Advanced",d:"People already pay me, or could"}];
+var RISKS=[{v:"safe",l:"Safe",d:"I want stability, small steady steps",r:.03},{v:"balanced",l:"Balanced",d:"Some risk is fine if it makes sense",r:.05},{v:"bold",l:"Bold",d:"I’ll take big swings for big rewards",r:.07}];
+var OBSTACLES=[
+ {v:"time",l:"No time",d:"My days are already full"},
+ {v:"money",l:"No money to start",d:"Every euro is already spent"},
+ {v:"focus",l:"I can’t stay focused",d:"I start things and don’t finish"},
+ {v:"fear",l:"Fear of failing",d:"What if it doesn’t work?"},
+ {v:"start",l:"I don’t know where to start",d:"Too many options, no clear path"},
+ {v:"support",l:"Nobody supports me",d:"People around me don’t get it"}
+];
+var PATHS=[
+ {s:"programming",n:"Freelance web developer",cost:"€0–100",first:"2–6 weeks",rate:[18,35,70],risk:1,d:"Build websites for local businesses. Start with three you already know personally."},
+ {s:"programming",n:"Small app or online tool",cost:"€50–300",first:"2–4 months",rate:[8,25,60],risk:3,d:"Solve one annoying problem for one type of person and charge a small monthly fee."},
+ {s:"marketing",n:"Social media for local businesses",cost:"€0",first:"2–4 weeks",rate:[15,30,55],risk:1,d:"Restaurants, salons and trades need content and have no time. Offer a monthly package."},
+ {s:"marketing",n:"Niche content and affiliate site",cost:"€50–150",first:"4–8 months",rate:[5,20,50],risk:2,d:"Pick a topic you know, publish honest reviews and guides, earn a commission on sales."},
+ {s:"design",n:"Brand and logo designer",cost:"€0–60",first:"3–6 weeks",rate:[15,35,65],risk:1,d:"Small businesses need logos, menus, flyers. Build a portfolio with three free projects first."},
+ {s:"design",n:"Digital templates shop",cost:"€20–100",first:"2–3 months",rate:[5,20,45],risk:2,d:"Planners, resumes, social templates. Make them once, sell them many times."},
+ {s:"writing",n:"Copywriter for websites and emails",cost:"€0",first:"2–6 weeks",rate:[15,35,70],risk:1,d:"Businesses pay for words that sell. Rewrite one local website as a sample."},
+ {s:"writing",n:"Self-published book",cost:"€0–300",first:"3–6 months",rate:[3,15,40],risk:2,d:"Write the book you wish existed. Publish on Amazon KDP and build an audience around it."},
+ {s:"video",n:"Short-form video editor",cost:"€0–50",first:"2–4 weeks",rate:[15,30,55],risk:1,d:"Creators and companies drown in raw footage. Edit reels for them on a monthly deal."},
+ {s:"video",n:"Your own content channel",cost:"€0–200",first:"6–12 months",rate:[2,15,50],risk:3,d:"Post consistently about one topic. Slow start, but it compounds and opens every other door."},
+ {s:"sales",n:"Commission-based sales",cost:"€0",first:"2–4 weeks",rate:[15,40,80],risk:2,d:"Companies pay a share of every deal you close. Your income has no ceiling, and no floor."},
+ {s:"teaching",n:"Online or local tutoring",cost:"€0",first:"1–3 weeks",rate:[15,30,50],risk:1,d:"Teach what you know to students or adults. Start on a local tutoring platform."},
+ {s:"teaching",n:"Paid workshop or online course",cost:"€0–200",first:"2–4 months",rate:[5,25,70],risk:2,d:"Package your knowledge once. Test it live with ten people before you record anything."},
+ {s:"handwork",n:"Local service business",cost:"€200–1,500",first:"2–6 weeks",rate:[20,35,55],risk:2,d:"Cleaning, repairs, gardening, moving help. Unsexy, in constant demand, and it scales with a team."},
+ {s:"languages",n:"Translation and localisation",cost:"€0",first:"2–6 weeks",rate:[12,28,50],risk:1,d:"Businesses expanding abroad need texts that sound native. Start with your strongest language pair."},
+ {s:"finance",n:"Bookkeeping for freelancers",cost:"€0–100",first:"3–6 weeks",rate:[18,35,60],risk:1,d:"Self-employed people hate admin. Do their monthly paperwork and they’ll stay for years."},
+ {s:"finance",n:"Spreadsheet and finance templates",cost:"€0–50",first:"1–3 months",rate:[5,20,40],risk:2,d:"Budget planners, invoice trackers, business models. Build once, sell online."}
+];
+var GOAL_PLAN={
+ freedom:[["Track every euro you spend for 30 days","Open a separate savings account and automate a transfer on payday","Calculate your freedom number in the toolkit below"],
+          ["Cut or renegotiate your three biggest fixed costs","Start learning one income skill for 30 minutes a day","Build a one-month emergency buffer"],
+          ["Invest your first automatic monthly amount in a broad, low-cost fund","Make your first euro outside your job","Raise your automatic saving by 1% of your income"]],
+ business:[["Write down 20 problems people around you complain about","Talk to 10 people who have the problem you picked","Pick one offer with one price"],
+           ["Get your first paying customer, even if it’s cheap","Set up a simple one-page website","Ask your first customer for a testimonial"],
+           ["Get to 5 paying customers","Write down your process so someone else could do it","Decide your price for the next 10 customers, and raise it"]],
+ career:[["Write down the role you want in 2 years and what it pays","Ask your manager what “excellent” looks like in your role","List the 3 skills that separate you from that role"],
+         ["Spend 30 minutes a day on the most important of those skills","Take on one visible project nobody else wants","Update your CV and LinkedIn with real results and numbers"],
+         ["Have the conversation about your next step and your pay","Have coffee with 3 people already in the role you want","Apply to 2 roles outside, even just to know your market value"]],
+ health:[["Walk 8,000 steps a day","Same bedtime every night, phone out of the bedroom","Drink water before every coffee"],
+         ["Add 3 strength sessions a week, 30 minutes is enough","Cook at home 5 days a week","Cut sugary drinks completely"],
+         ["Book a general health check-up","Find a sport or class you actually enjoy","Measure: energy, sleep and strength compared to day 1"]],
+ balance:[["Write down what drains you and what gives you energy","Ten minutes a day without your phone, just thinking","Say no to one thing this week"],
+          ["Schedule one evening a week that is only for you","Call or see one person you miss every week","Cut one subscription or habit that you don’t enjoy"],
+          ["Plan one day completely offline","Write down what “enough” means for you, in numbers","Keep the 3 habits that helped most, drop the rest"]]
+};
+var AREA_ACT={
+ money:"Write down your exact monthly income and spending, today",
+ career:"Ask one person you respect for honest feedback on your work",
+ health:"Go to bed 30 minutes earlier for the next 14 days",
+ love:"Plan one real, phone-free moment a week with someone you love",
+ growth:"Read 10 pages a day of one of the books below",
+ fun:"Put one fun thing in your calendar every week, like a meeting"
+};
+var OBST={
+ time:{t:"You don’t lack time, you lack protected time.",a:"Block 30 minutes in your calendar every day, same time, and treat it like a doctor’s appointment.",x:"Use the 168-hour tool below to find your hidden hours"},
+ money:{t:"Most successful starts cost almost nothing.",a:"Pick a path that costs €0 to start and sell your time and skill before you spend anything.",x:"Sell one thing you no longer use to fund your first step"},
+ focus:{t:"Focus is not a talent. It’s an environment.",a:"Work in 25-minute blocks with your phone in another room. Finish one thing before you start another.",x:"Keep a single list with only 3 tasks per day"},
+ fear:{t:"Failing small is the price of succeeding big.",a:"Make your first step so small it can’t really fail: one message, one post, one conversation.",x:"Write down the worst realistic outcome, and how you’d recover"},
+ start:{t:"You don’t need the best path. You need one path.",a:"Take the first income idea below and commit to it for 90 days before you judge it.",x:"Do one step from your plan within 24 hours"},
+ support:{t:"You don’t need everyone. You need a few of the right people.",a:"Find one online group of people doing what you want to do, and show up there every week.",x:"Tell one person you trust about your plan"}
+};
+var BOOKS={
+ freedom:[["The Psychology of Money","Morgan Housel","Why behaviour matters more than intelligence with money."],["The Millionaire Next Door","Stanley & Danko","How real wealth is quietly built by ordinary people."],["Your Money or Your Life","Vicki Robin","Money measured in hours of your life."]],
+ business:[["The Lean Startup","Eric Ries","Test small and fast before you build big."],["$100M Offers","Alex Hormozi","How to make an offer people can’t refuse."],["The E-Myth Revisited","Michael Gerber","Build a business, not a job you own."]],
+ career:[["So Good They Can’t Ignore You","Cal Newport","Skill first, passion follows."],["Deep Work","Cal Newport","Focus as a career superpower."],["Never Split the Difference","Chris Voss","Negotiate your pay and your future."]],
+ health:[["Why We Sleep","Matthew Walker","Sleep as the base of everything else."],["Atomic Habits","James Clear","Tiny habits, remarkable results."],["Can’t Hurt Me","David Goggins","Mental toughness, the hard way."]],
+ balance:[["Essentialism","Greg McKeown","Do less, but better."],["Four Thousand Weeks","Oliver Burkeman","Time management for mortals."],["Man’s Search for Meaning","Viktor Frankl","Meaning as the deepest motivation."]]
+};
+var AREA_BOOK={money:["I Will Teach You to Be Rich","Ramit Sethi"],career:["Range","David Epstein"],health:["Atomic Habits","James Clear"],love:["The 5 Love Languages","Gary Chapman"],growth:["Mindset","Carol Dweck"],fun:["The Joy of Missing Out","Tonya Dalton"]};
+
+/* ================= STEPS ================= */
+var STEPS=[
+ {id:"name",sec:"About you",q:"First things first: what’s your name?",h:"Just your first name, so your plan feels like yours.",t:"text"},
+ {id:"age",sec:"About you",q:"How old are you?",h:"Your age changes how much time compounding has to work for you.",t:"number",min:14,max:90,suf:"years"},
+ {id:"goal",sec:"Your direction",q:"What matters most for the next five years?",h:"Pick the one that would change your life the most if you got it.",t:"choice",o:GOALS},
+ {id:"wheel",sec:"Your life today",q:"Rate each part of your life right now.",h:"1 is “really bad”, 10 is “couldn’t be better”. Be honest: nobody sees this but you.",t:"wheel"},
+ {id:"money",sec:"Your money",q:"Let’s look at your money.",h:"Monthly amounts after tax. Rough numbers are fine; honest numbers are better.",t:"money"},
+ {id:"time",sec:"Your time",q:"How much time can you really give your future?",h:"Not on your best day. On a normal Tuesday.",t:"time"},
+ {id:"skills",sec:"Your strengths",q:"What are you good at, or could get good at?",h:"Pick everything that fits. These decide your income ideas.",t:"multi",o:SKILLS},
+ {id:"level",sec:"Your strengths",q:"How strong are those skills today?",h:"",t:"choice",o:LEVELS},
+ {id:"risk",sec:"Your style",q:"How much risk are you comfortable with?",h:"This changes your investment assumptions and the kind of ideas you get.",t:"choice",o:RISKS},
+ {id:"obstacle",sec:"Your style",q:"What usually stops you?",h:"Everyone has one. Naming it is half the work.",t:"choice",o:OBSTACLES},
+ {id:"target",sec:"Your horizon",q:"By what age would you like to be financially free?",h:"Free means your investments could pay your expenses, so work becomes a choice.",t:"target"}
+];
+/* ====== EMAIL SETTINGS: paste your 3 EmailJS values here ====== */
+var EMAILJS={publicKey:"YOUR_PUBLIC_KEY",serviceId:"YOUR_SERVICE_ID",templateId:"YOUR_TEMPLATE_ID"};
+var KEY="egld-success-v1";
+var A={wheel:{money:5,career:5,health:5,love:5,growth:5,fun:5},income:2500,expenses:2000,savings:2000,debt:0,hours:1,when:"morning",skills:[]};
+try{var saved=JSON.parse(localStorage.getItem(KEY)||"null");if(saved&&saved.a){A=Object.assign(A,saved.a);}}catch(e){}
+var cur=0;
+function save(done){try{localStorage.setItem(KEY,JSON.stringify({a:A,done:!!done}));}catch(e){}}
+
+/* ================= WIZARD ================= */
+function renderDots(){var h="";for(var i=0;i<STEPS.length;i++)h+='<i class="'+(i<=cur?"on":"")+'"></i>';$("dots").innerHTML=h;}
+function choiceBtns(o,val,multi){
+  return '<div class="choices">'+o.map(function(x){
+    var on=multi?(val||[]).indexOf(x.v)>-1:String(val)===String(x.v);
+    return '<button type="button" class="choice" data-v="'+esc(x.v)+'" aria-pressed="'+on+'"><b>'+esc(x.l)+'</b>'+(x.d?'<span>'+esc(x.d)+'</span>':'')+'</button>';
+  }).join("")+'</div>';
+}
+function render(){
+  var s=STEPS[cur],h="";
+  $("stepName").textContent=s.sec;
+  $("qCount").textContent="Question "+(cur+1)+" of "+STEPS.length;
+  $("qText").textContent=s.q.replace("{name}",A.name||"");
+  $("qHint").textContent=s.h;$("qHint").hidden=!s.h;
+  $("err").textContent="";
+  if(s.t==="text") h='<input class="txt" id="f_name" type="text" autocomplete="given-name" maxlength="30" placeholder="Your first name" value="'+esc(A.name||"")+'">';
+  if(s.t==="number") h='<div class="inp" style="max-width:220px"><input id="f_age" type="number" inputmode="numeric" min="'+s.min+'" max="'+s.max+'" value="'+esc(A.age||"")+'"><span>'+s.suf+'</span></div>';
+  if(s.t==="choice") h=choiceBtns(s.o,A[s.id],false);
+  if(s.t==="multi") h=choiceBtns(s.o,A.skills,true);
+  if(s.t==="wheel") h='<div class="sliders">'+AREAS.map(function(a){return '<div class="sl"><label for="w_'+a.k+'">'+a.l+'<output id="o_'+a.k+'">'+A.wheel[a.k]+'</output></label><input type="range" id="w_'+a.k+'" min="1" max="10" value="'+A.wheel[a.k]+'" data-k="'+a.k+'"></div>';}).join("")+'</div>';
+  if(s.t==="money") h='<div class="fields">'+
+    fld("m_income","Monthly income",A.income,"After tax, all sources")+fld("m_expenses","Monthly spending",A.expenses,"Rent, food, bills, everything")+
+    fld("m_savings","Savings and investments",A.savings,"Total you have today")+fld("m_debt","Debt",A.debt,"Loans, credit cards. Not your mortgage")+'</div>';
+  if(s.t==="time") h='<div class="sl" style="max-width:520px"><label for="t_hours">Hours per day for your goals<output id="o_hours">'+A.hours+' h</output></label><input type="range" id="t_hours" min="0.5" max="6" step="0.5" value="'+A.hours+'"></div>'+
+    '<p style="font-weight:700;margin:1.6rem 0 .6rem">When do you have the most energy?</p>'+choiceBtns([{v:"morning",l:"Morning",d:"I’m sharp before the day starts"},{v:"evening",l:"Evening",d:"I come alive when the day is done"}],A.when,false);
+  if(s.t==="target"){var mn=Math.min(80,(+A.age||30)+3);if(!A.target||A.target<mn)A.target=Math.max(mn,Math.min(80,55));
+    h='<div class="sl" style="max-width:520px"><label for="t_target">Financially free by<output id="o_target">age '+A.target+'</output></label><input type="range" id="t_target" min="'+mn+'" max="80" value="'+A.target+'"></div>';}
+  $("answer").innerHTML=h;
+  $("back").style.visibility=cur?"visible":"hidden";
+  $("next").textContent=cur===STEPS.length-1?"Show my blueprint":"Next";
+  renderDots();bind(s);
+}
+function fld(id,l,v,small){return '<div class="fld"><label for="'+id+'">'+l+'</label><div class="inp"><span>€</span><input id="'+id+'" type="number" inputmode="decimal" min="0" value="'+esc(v)+'"></div><small>'+small+'</small></div>';}
+function bind(s){
+  var ans=$("answer");
+  ans.querySelectorAll(".choice").forEach(function(b){b.addEventListener("click",function(){
+    if(s.t==="multi"){var v=b.dataset.v,i=A.skills.indexOf(v);if(i>-1)A.skills.splice(i,1);else A.skills.push(v);b.setAttribute("aria-pressed",String(i<0));}
+    else{var key=s.t==="time"?"when":s.id;A[key]=s.id==="level"?+b.dataset.v:b.dataset.v;
+      ans.querySelectorAll(s.t==="time"?".choices .choice":".choice").forEach(function(x){x.setAttribute("aria-pressed",String(x===b));});
+      if(s.t==="choice")setTimeout(next,220);}
+    save();
+  });});
+  ans.querySelectorAll("input[type=range][data-k]").forEach(function(r){r.addEventListener("input",function(){A.wheel[r.dataset.k]=+r.value;$("o_"+r.dataset.k).textContent=r.value;save();});});
+  if($("t_hours"))$("t_hours").addEventListener("input",function(){A.hours=+this.value;$("o_hours").textContent=this.value+" h";save();});
+  if($("t_target"))$("t_target").addEventListener("input",function(){A.target=+this.value;$("o_target").textContent="age "+this.value;save();});
+  var first=ans.querySelector("input.txt, .inp input");
+  if(first){first.addEventListener("keydown",function(e){if(e.key==="Enter")next();});}
+}
+function collect(){
+  var s=STEPS[cur];
+  if(s.t==="text"){var n=$("f_name").value.trim();if(!n)return "Type your first name to continue.";A.name=n;}
+  if(s.t==="number"){var a=parseInt($("f_age").value,10);if(!(a>=14&&a<=90))return "Enter an age between 14 and 90.";A.age=a;}
+  if(s.t==="choice"&&(A[s.id]===undefined||A[s.id]===""))return "Pick one option to continue.";
+  if(s.t==="multi"&&!A.skills.length)return "Pick at least one. If nothing fits yet, choose what you’d like to learn.";
+  if(s.t==="money"){A.income=num($("m_income").value);A.expenses=num($("m_expenses").value);A.savings=num($("m_savings").value);A.debt=num($("m_debt").value);
+    if(A.income<=0)return "Enter your monthly income to continue. A rough number is fine.";}
+  if(s.t==="time"&&!A.when)return "Pick when you have the most energy.";
+  save();return "";
+}
+function next(){
+  var e=collect();if(e){$("err").textContent=e;return;}
+  if(cur<STEPS.length-1){cur++;render();$("qText").focus({preventScroll:true});}
+  else{save(true);showResults(true);}
+}
+$("next").addEventListener("click",next);
+$("back").addEventListener("click",function(){if(cur>0){collect();cur--;render();}});
+
+/* ================= ENGINE ================= */
+function simulate(start,monthly,r,months,extra,extraFrom){
+  var i=r/12,v=start,out=[v];
+  for(var m=1;m<=months;m++){v=v*(1+i)+monthly+(extra&&m>=extraFrom?extra:0);if(m%12===0)out.push(v);}
+  return out;
+}
+function yearsTo(series,target){for(var y=0;y<series.length;y++)if(series[y]>=target)return y;return -1;}
+
+function blueprint(){
+  var risk=RISKS.filter(function(x){return x.v===A.risk;})[0]||RISKS[1];
+  var goal=GOALS.filter(function(x){return x.v===A.goal;})[0]||GOALS[0];
+  var lvl=+A.level||0, riskN={safe:1,balanced:2,bold:3}[A.risk]||2;
+
+  /* life score */
+  var vals=AREAS.map(function(a){return A.wheel[a.k];});
+  var score=Math.round(vals.reduce(function(s,v){return s+v;},0)/vals.length*10);
+  var sorted=AREAS.slice().sort(function(a,b){return A.wheel[a.k]-A.wheel[b.k];});
+  var weak=sorted[0],strong=sorted[sorted.length-1];
+  var verdict=score>=75?"You’re doing well. Now it’s about direction, not repair.":score>=55?"A solid base with clear room to grow. One weak area is holding the rest back.":score>=40?"You’re carrying more than you show. Fix the foundation before you chase big goals.":"Things are heavy right now. Start very small: one area, one step, this week.";
+
+  /* paths */
+  var ranked=PATHS.map(function(p){var sc=(A.skills.indexOf(p.s)>-1?10:0)-Math.abs(p.risk-riskN)*2+(p.risk===1&&lvl===0?1:0)+(A.obstacle==="money"&&p.cost.indexOf("€0")===0?2:0);return {p:p,sc:sc};})
+    .sort(function(a,b){return b.sc-a.sc;});
+  var seen={},paths=[];ranked.forEach(function(x){if(paths.length<3&&(!seen[x.p.s]||paths.length>=Math.min(3,A.skills.length))){paths.push(x.p);seen[x.p.s]=1;}});
+  paths=paths.map(function(p){return Object.assign({},p,{monthly:Math.round(p.rate[lvl]*A.hours*22*0.6/10)*10});});
+
+  /* money */
+  var inc=A.income,exp=A.expenses,surplus=inc-exp,rate=inc>0?surplus/inc:0;
+  var fi=exp*12*25, start=A.savings-A.debt, contrib=Math.max(0,surplus);
+  var maxY=Math.max(5,90-A.age),extra=paths[0]?paths[0].monthly:0;
+  var fullB=simulate(start,contrib,risk.r,maxY*12,0,0),fullX=simulate(start,contrib,risk.r,maxY*12,extra,7);
+  var yb=yearsTo(fullB,fi), yx=yearsTo(fullX,fi);
+  var horizon=Math.min(maxY,Math.max(10,(A.target-A.age)+5,(yb>=0?yb+3:0)));
+  var base=fullB.slice(0,horizon+1), boost=fullX.slice(0,horizon+1);
+  var n=(A.target-A.age)*12,i=risk.r/12,g=Math.pow(1+i,n);
+  var need=n>0?Math.max(0,(fi-start*g)*i/(g-1)):0;
+  var emergency=exp*3;
+
+  /* plan */
+  var gp=GOAL_PLAN[goal.v],ob=OBST[A.obstacle]||OBST.start;
+  var phases=[
+    {when:"Days 1–30",t:"Foundation",items:[ob.x].concat(gp[0].slice(0,2),[AREA_ACT[weak.k]])},
+    {when:"Days 31–60",t:"Build",items:gp[1].concat(paths[0]?["Make your first move as a "+paths[0].n.toLowerCase()]:[])},
+    {when:"Days 61–90",t:"Momentum",items:gp[2].concat(["Re-take this simulator and compare your life score"])}
+  ];
+  if(surplus<0)phases[0].items.unshift("Close the gap: you spend "+eur(-surplus)+" more than you earn each month");
+
+  /* routine */
+  var mins=Math.round(A.hours*60),deep=Math.round(mins*0.6/5)*5,learn=Math.max(10,Math.round(mins*0.25/5)*5),rev=Math.max(5,mins-deep-learn);
+  function t(h,m){h=(h+Math.floor(m/60))%24;m=m%60;return (h<10?"0":"")+h+":"+(m<10?"0":"")+m;}
+  var r=[],h0=A.when==="morning"?6:20,m0=A.when==="morning"?0:0,cm=0;
+  if(A.when==="morning"){r.push([t(h0-0,cm),"Wake, water, no phone","The first 30 minutes are yours, not your inbox’s."]);cm+=15;
+    r.push([t(h0,cm),"Move for 15 minutes","Walk, stretch or a short workout. Energy first."]);cm+=15;}
+  else{r.push([t(h0-1,0),"Shut down the workday","Close the laptop, eat, reset. Then begin."]);cm=0;}
+  r.push([t(h0,cm),"Deep work: "+deep+" min","Your #1 task from the 90-day plan. Phone in another room."]);cm+=deep;
+  r.push([t(h0,cm),"Learn: "+learn+" min","Your income skill, or 10 pages of your book."]);cm+=learn;
+  r.push([t(h0,cm),"Review: "+rev+" min","What did I do? What’s tomorrow’s #1 task?"]);cm+=rev;
+  if(A.when==="evening")r.push([t(h0,cm+15),"Screens off","Protect your sleep, it pays for tomorrow."]);
+  else r.push([t(22,30),"Screens off","Tomorrow’s morning starts tonight."]);
+
+  /* books */
+  var books=BOOKS[goal.v].slice();var ab=AREA_BOOK[weak.k];
+  if(!books.some(function(b){return b[0]===ab[0];}))books.push([ab[0],ab[1],"Picked for your weakest area: "+weak.l.toLowerCase()+"."]);
+
+  return {goal:goal,risk:risk,score:score,verdict:verdict,weak:weak,strong:strong,paths:paths,inc:inc,exp:exp,surplus:surplus,rate:rate,fi:fi,start:start,base:base,boost:boost,yb:yb,yx:yx,need:need,emergency:emergency,horizon:horizon,phases:phases,routine:r,books:books,ob:ob,extra:extra};
+}
+
+/* ================= RENDER RESULTS ================= */
+function ringSvg(score){
+  var R=70,C=2*Math.PI*R,off=C*(1-score/100);
+  return '<svg class="ring" viewBox="0 0 170 170" role="img" aria-label="Life score '+score+' out of 100"><circle cx="85" cy="85" r="'+R+'" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="12"/><circle cx="85" cy="85" r="'+R+'" fill="none" stroke="#F1CF7E" stroke-width="12" stroke-linecap="round" stroke-dasharray="'+C.toFixed(1)+'" stroke-dashoffset="'+off.toFixed(1)+'" transform="rotate(-90 85 85)"/><text x="85" y="92" text-anchor="middle" font-size="46">'+score+'</text><text x="85" y="116" text-anchor="middle" font-size="13" style="font-family:Plus Jakarta Sans,sans-serif;opacity:.75">life score</text></svg>';
+}
+function radarSvg(){
+  var cx=190,cy=170,R=120,n=AREAS.length,pts=[],grid="",axes="",labels="";
+  for(var lv=2;lv<=10;lv+=2){var ring=[];for(var k=0;k<n;k++){var a=-Math.PI/2+k*2*Math.PI/n;ring.push((cx+Math.cos(a)*R*lv/10).toFixed(1)+","+(cy+Math.sin(a)*R*lv/10).toFixed(1));}grid+='<polygon points="'+ring.join(" ")+'" fill="none" stroke="var(--line)"/>';}
+  AREAS.forEach(function(ar,k){var a=-Math.PI/2+k*2*Math.PI/n,v=A.wheel[ar.k];
+    pts.push((cx+Math.cos(a)*R*v/10).toFixed(1)+","+(cy+Math.sin(a)*R*v/10).toFixed(1));
+    axes+='<line x1="'+cx+'" y1="'+cy+'" x2="'+(cx+Math.cos(a)*R)+'" y2="'+(cy+Math.sin(a)*R)+'" stroke="var(--line)"/>';
+    var lx=cx+Math.cos(a)*(R+26),ly=cy+Math.sin(a)*(R+18)+4,anc=Math.abs(Math.cos(a))<.2?"middle":(Math.cos(a)>0?"start":"end");
+    labels+='<text x="'+lx.toFixed(1)+'" y="'+ly.toFixed(1)+'" text-anchor="'+anc+'">'+esc(ar.l)+' · '+v+'</text>';});
+  return '<svg class="radar" viewBox="-75 -12 530 360" role="img" aria-label="Your life wheel">'+grid+axes+'<polygon points="'+pts.join(" ")+'" fill="var(--gold)" fill-opacity=".3" stroke="var(--gold)" stroke-width="2.5"/>'+labels+'</svg>';
+}
+function moneyChart(B){
+  var W=640,H=260,L=64,Rr=14,T=16,Bm=30,yrs=B.base.length-1;
+  var all=B.base.concat(B.boost,[B.fi]),mx=Math.max.apply(null,all)*1.05,mn=Math.min(0,Math.min.apply(null,all));
+  var X=function(y){return L+(W-L-Rr)*y/yrs;},Y=function(v){return T+(H-T-Bm)*(1-(v-mn)/(mx-mn));};
+  var line=function(s){return s.map(function(v,y){return (y?"L":"M")+X(y).toFixed(1)+" "+Y(v).toFixed(1);}).join(" ");};
+  var ticks="",step=yrs>20?5:yrs>10?2:1;
+  for(var y=0;y<=yrs;y+=step)ticks+='<text x="'+X(y)+'" y="'+(H-8)+'" text-anchor="middle">'+(A.age+y)+'</text>';
+  var ylab="";for(var q=0;q<=4;q++){var v=mn+(mx-mn)*q/4;ylab+='<text x="'+(L-8)+'" y="'+(Y(v)+4)+'" text-anchor="end">'+(Math.abs(v)>=1e6?"€"+(v/1e6).toFixed(1)+"M":"€"+Math.round(v/1000)+"k")+'</text><line x1="'+L+'" x2="'+(W-Rr)+'" y1="'+Y(v)+'" y2="'+Y(v)+'" stroke="var(--line)" stroke-width=".6"/>';}
+  var tg=A.target-A.age,tgl=tg<=yrs?'<line x1="'+X(tg)+'" x2="'+X(tg)+'" y1="'+T+'" y2="'+(H-Bm)+'" stroke="var(--coral)" stroke-dasharray="3 4"/><text x="'+(X(tg)+5)+'" y="'+(T+12)+'" style="fill:var(--coral)">your target</text>':"";
+  return '<svg class="chart" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Net worth projection by age">'+ylab+tgl+
+   '<line x1="'+L+'" x2="'+(W-Rr)+'" y1="'+Y(B.fi)+'" y2="'+Y(B.fi)+'" stroke="var(--gold)" stroke-width="2" stroke-dasharray="6 5"/>'+
+   '<path d="'+line(B.boost)+'" fill="none" stroke="var(--forest-2)" stroke-width="3" stroke-linecap="round"/>'+
+   '<path d="'+line(B.base)+'" fill="none" stroke="var(--muted)" stroke-width="2.5" stroke-linecap="round"/>'+ticks+'</svg>';
+}
+function showResults(scroll){
+  var B=blueprint(),nm=esc(A.name||"Friend");
+  var ageFree=function(y){return y<0?"not before 90":"age "+(A.age+y);};
+  var h='';
+  h+='<div class="res-hero art"><div><h2>'+nm+', here’s your blueprint.</h2><p>'+esc(B.verdict)+' Your goal is <b>'+esc(B.goal.l.toLowerCase())+'</b>, your strongest area is '+esc(B.strong.l.toLowerCase())+', and the one to fix first is <b>'+esc(B.weak.l.toLowerCase())+'</b>.</p></div>'+ringSvg(B.score)+'</div>';
+
+  h+='<div class="mail"><div><h3>Send this plan to my inbox</h3><p>Keep it, print it, come back to it in 90 days. One email with your full blueprint.</p></div>'+
+     '<form id="mailForm" novalidate><div class="row"><div class="inp"><input id="mEmail" type="email" autocomplete="email" placeholder="you@example.com" aria-label="Your email address" required value="'+esc(A.email||"")+'"></div><button class="btn dark" id="mSend" type="submit">Email my plan</button></div>'+
+     '<label class="ck"><input type="checkbox" id="mConsent"><span>Email me my plan. I agree my email is used to deliver it (see the note at the bottom of this page).</span></label>'+
+     '<label class="ck"><input type="checkbox" id="mNews"><span>Also send me a short monthly email with new tools and ideas. Optional, unsubscribe anytime.</span></label>'+
+     '<div class="status" id="mStatus" role="status"></div></form></div>';
+  h+='<div class="grid2">';
+  h+='<div class="card"><h3>Your life wheel</h3><p class="sub">A wheel only rolls if it’s round. The dents show where your energy leaks.</p>'+radarSvg()+
+     '<div class="focus"><b>Focus first: '+esc(B.weak.l)+' ('+A.wheel[B.weak.k]+'/10)</b>'+esc(AREA_ACT[B.weak.k])+'. Raising your weakest area by 2 points usually lifts everything else with it.</div></div>';
+  h+='<div class="card"><h3>What stops you, and how to beat it</h3><p class="sub">You said: “'+esc((OBSTACLES.filter(function(o){return o.v===A.obstacle;})[0]||{}).l||"")+'”.</p>'+
+     '<p class="serif" style="font-size:1.7rem;line-height:1.2">'+esc(B.ob.t)+'</p><p>'+esc(B.ob.a)+'</p>'+
+     '<ul class="checks" style="margin-top:1rem"><li>'+esc(B.ob.x)+'</li><li>Do it within 24 hours, before motivation fades.</li></ul></div>';
+  h+='</div>';
+
+  /* money */
+  var tight=B.surplus<=0;
+  h+='<div class="card" style="margin-top:1.25rem"><h3>Where your money is heading</h3><p class="sub">Your freedom number is 25 times your yearly spending. Assumes '+Math.round(B.risk.r*100)+'% yearly growth after inflation for a '+B.risk.l.toLowerCase()+' investor.</p>'+
+   '<dl class="stats"><div><dt>Left over each month</dt><dd class="tnum" style="color:'+(tight?"var(--coral)":"var(--ok)")+'">'+eur(B.surplus)+'</dd></div><div><dt>Savings rate</dt><dd class="tnum">'+Math.round(B.rate*100)+'%</dd></div><div><dt>Freedom number</dt><dd class="tnum">'+eur(B.fi)+'</dd></div><div><dt>Free on current path</dt><dd class="tnum">'+ageFree(B.yb)+'</dd></div></dl>'+
+   moneyChart(B)+
+   '<div class="legend"><span><i style="background:var(--muted)"></i>Current path</span><span><i style="background:var(--forest-2)"></i>With '+eur(B.extra)+'/month extra from your first income idea</span><span><i style="background:var(--gold)"></i>Freedom number</span></div>'+
+   '<div class="callout">'+(tight?'<b>Right now nothing is left over at the end of the month.</b> Before any investing, close that gap: cut one fixed cost, add one income. Then aim for a buffer of '+eur(B.emergency)+' (3 months of spending).':
+   '<b>To be free by age '+A.target+', you’d need to invest about '+eur(B.need)+' a month.</b> You currently have '+eur(Math.max(0,B.surplus))+' left over. '+(B.need<=B.surplus?"You’re on track. Automate it so you never have to decide again.":"The gap is "+eur(B.need-B.surplus)+" a month. With the extra income below, you’d be free at "+ageFree(B.yx)+".")+(A.debt>0?' Pay off your '+eur(A.debt)+' of debt first if its interest is higher than 5%.':''))+'</div></div>';
+
+  /* paths */
+  h+='<div class="card" style="margin-top:1.25rem"><h3>Income ideas that fit you</h3><p class="sub">Matched to your skills, your level and your appetite for risk. Earnings assume '+A.hours+' h/day, 22 days a month, once you’re up and running (usually 6–12 months).</p><div class="grid3">'+
+   B.paths.map(function(p,ix){return '<div class="path"><span class="pill" style="align-self:flex-start;background:'+(ix?'var(--surface)':'var(--gold-soft)')+'">'+(ix?"Option "+(ix+1):"Best match")+'</span><h4>'+esc(p.n)+'</h4><p style="margin:0;font-size:.93rem">'+esc(p.d)+'</p><div class="earn">≈ '+eur(p.monthly)+'<span style="font:600 .85rem Plus Jakarta Sans,sans-serif;color:var(--muted)"> / month</span></div><div class="meta"><span class="pill">Start: '+esc(p.cost)+'</span><span class="pill">First € in '+esc(p.first)+'</span></div></div>';}).join("")+'</div></div>';
+
+  /* plan */
+  h+='<div class="card" style="margin-top:1.25rem"><h3>Your 90-day plan</h3><p class="sub">Three phases. Tick them off on paper; it works better than you think.</p><div class="grid3">'+
+   B.phases.map(function(ph){return '<div class="phase"><div class="when">'+ph.when+'</div><h4>'+ph.t+'</h4><ul>'+ph.items.map(function(it){return '<li>'+esc(it)+'</li>';}).join("")+'</ul></div>';}).join("")+'</div></div>';
+
+  /* routine + books */
+  h+='<div class="grid2"><div class="card"><h3>Your daily routine</h3><p class="sub">Built on '+A.hours+' hour'+(A.hours==1?"":"s")+' a day, in the '+esc(A.when)+'. Same time every day beats more time some days.</p><div class="timeline">'+
+   B.routine.map(function(s){return '<div class="slot"><time>'+s[0]+'</time><div><b>'+esc(s[1])+'</b><span class="muted">'+esc(s[2])+'</span></div></div>';}).join("")+'</div></div>';
+  h+='<div class="card"><h3>Your reading list</h3><p class="sub">Chosen for your goal and your weakest area. 10 pages a day is a book a month.</p><div class="books">'+
+   B.books.map(function(b){return '<div class="book"><b>'+esc(b[0])+'</b><span>'+esc(b[1])+'</span><p>'+esc(b[2])+'</p></div>';}).join("")+'</div></div></div>';
+
+  h+='<div class="res-actions"><button class="btn dark" id="rPrint" type="button">Save as PDF</button><button class="btn ghost" id="rEdit" type="button">Change my answers</button><button class="btn ghost" id="rReset" type="button">Start over</button></div>';
+
+  var R=$("results");R.innerHTML=h;R.hidden=false;$("simCard").hidden=true;
+  $("rPrint").onclick=function(){window.print();};
+  $("mailForm").addEventListener("submit",function(e){e.preventDefault();sendPlan(B);});
+  $("rEdit").onclick=function(){R.hidden=true;$("simCard").hidden=false;cur=0;render();$("simSec").scrollIntoView();};
+  $("rReset").onclick=function(){try{localStorage.removeItem(KEY);}catch(e){}location.reload();};
+  if(scroll)R.scrollIntoView();
+}
+
+/* ================= EMAIL ================= */
+function emailHtml(B){
+  var g="#173F31",gold="#C8952B",mut="#5B6B63",box='background:#F1F3EE;border-radius:12px;padding:16px 18px;margin:0 0 14px;';
+  var h2=function(t){return '<h2 style="font-family:Georgia,serif;font-weight:normal;color:'+g+';font-size:22px;margin:28px 0 10px">'+t+'</h2>';};
+  var li=function(arr){return '<ul style="margin:0;padding-left:20px">'+arr.map(function(x){return '<li style="margin:0 0 6px">'+esc(x)+'</li>';}).join("")+'</ul>';};
+  var o='<div style="font-family:Arial,Helvetica,sans-serif;color:#12241D;font-size:15px;line-height:1.55;max-width:620px;margin:0 auto">';
+  o+='<div style="background:'+g+';color:#fff;border-radius:16px;padding:26px 24px"><img src="https://egldmoney.com/img/logo-mark-128.png" width="44" height="44" alt="" style="display:block;border-radius:50%;margin-bottom:10px"><div style="font-family:Georgia,serif;font-size:20px">EGLD <i style="color:#F1CF7E">Money</i></div><div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.7">Your financial freedom</div>'+
+     '<h1 style="font-family:Georgia,serif;font-weight:normal;font-size:30px;margin:22px 0 6px">'+esc(A.name)+', here’s your blueprint.</h1><p style="margin:0;opacity:.85">Life score: <b style="color:#F1CF7E;font-size:20px">'+B.score+'/100</b>. '+esc(B.verdict)+'</p></div>';
+  o+=h2("Focus first: "+esc(B.weak.l))+'<p style="'+box+'">'+esc(AREA_ACT[B.weak.k])+'. Your goal is <b>'+esc(B.goal.l.toLowerCase())+'</b>; your strongest area is '+esc(B.strong.l.toLowerCase())+'.</p>';
+  o+=h2("Your money")+'<table style="width:100%;border-collapse:collapse;font-size:14px">'+
+    [["Left over each month",eur(B.surplus)],["Savings rate",Math.round(B.rate*100)+"%"],["Freedom number",eur(B.fi)],["Free on current path",B.yb<0?"not before 90":"age "+(A.age+B.yb)],["Free with extra income",B.yx<0?"not before 90":"age "+(A.age+B.yx)],["Needed per month to be free by "+A.target,eur(B.need)]]
+    .map(function(r){return '<tr><td style="padding:8px 0;border-bottom:1px solid #D5DDD3;color:'+mut+'">'+r[0]+'</td><td style="padding:8px 0;border-bottom:1px solid #D5DDD3;text-align:right;font-weight:bold">'+r[1]+'</td></tr>';}).join("")+'</table>';
+  o+=h2("Income ideas that fit you")+B.paths.map(function(p,i){return '<div style="'+box+'"><b>'+(i?"":"★ ")+esc(p.n)+'</b> · about '+eur(p.monthly)+'/month<br><span style="color:'+mut+'">'+esc(p.d)+' Start: '+esc(p.cost)+'. First € in '+esc(p.first)+'.</span></div>';}).join("");
+  o+=h2("Your 90-day plan")+B.phases.map(function(ph){return '<div style="'+box+'"><div style="color:'+gold+';font-weight:bold;font-size:12px;text-transform:uppercase;letter-spacing:1px">'+ph.when+' · '+ph.t+'</div>'+li(ph.items)+'</div>';}).join("");
+  o+=h2("Your daily routine")+'<table style="width:100%;border-collapse:collapse;font-size:14px">'+B.routine.map(function(r){return '<tr><td style="padding:7px 12px 7px 0;font-weight:bold;color:'+g+';vertical-align:top;white-space:nowrap">'+r[0]+'</td><td style="padding:7px 0"><b>'+esc(r[1])+'</b><br><span style="color:'+mut+'">'+esc(r[2])+'</span></td></tr>';}).join("")+'</table>';
+  o+=h2("What stops you")+'<p style="'+box+'"><b>'+esc(B.ob.t)+'</b><br>'+esc(B.ob.a)+'</p>';
+  o+=h2("Your reading list")+li(B.books.map(function(b){return b[0]+" by "+b[1];}));
+  o+='<p style="margin:30px 0 0;padding:18px;border-radius:12px;background:#F4E6C6;text-align:center">Come back in 90 days, take the simulator again, and see how far your life score moved.<br><a href="https://egldmoney.com/" style="color:'+g+';font-weight:bold">egldmoney.com</a></p>';
+  o+='<p style="font-size:11px;color:'+mut+';margin-top:20px">This plan is a planning tool, not financial, legal or medical advice. Projections use simple assumptions and are not guaranteed. © EGLD MONEY</p></div>';
+  return o;
+}
+var ejsLoaded=null;
+function loadEJS(){
+  if(ejsLoaded)return ejsLoaded;
+  ejsLoaded=new Promise(function(res,rej){var s=document.createElement("script");s.src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.4.1/dist/email.min.js";s.onload=function(){window.emailjs.init({publicKey:EMAILJS.publicKey});res(window.emailjs);};s.onerror=function(){ejsLoaded=null;rej();};document.head.appendChild(s);});
+  return ejsLoaded;
+}
+function sendPlan(B){
+  var st=$("mStatus"),btn=$("mSend"),em=$("mEmail").value.trim();
+  st.className="status";
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)){st.className="status bad";st.textContent="That email address doesn’t look right.";return;}
+  if(!$("mConsent").checked){st.className="status bad";st.textContent="Tick the first box so we’re allowed to email you.";return;}
+  if(EMAILJS.publicKey.indexOf("YOUR_")===0){st.className="status bad";st.textContent="Email sending isn’t switched on yet. Use “Save as PDF” for now.";return;}
+  A.email=em;save(true);
+  btn.disabled=true;btn.textContent="Sending…";
+  loadEJS().then(function(ej){
+    return ej.send(EMAILJS.serviceId,EMAILJS.templateId,{
+      to_email:em,to_name:A.name||"",life_score:String(B.score),goal:B.goal.l,
+      newsletter:$("mNews").checked?"YES":"no",plan_html:emailHtml(B)});
+  }).then(function(){
+    st.className="status ok";st.textContent="Sent! Check your inbox (and your spam folder, just in case).";btn.textContent="Sent ✓";
+  }).catch(function(){
+    st.className="status bad";st.textContent="Something went wrong sending the email. Try again in a minute, or use “Save as PDF”.";btn.disabled=false;btn.textContent="Email my plan";
+  });
+}
+
+/* init */
+try{var st=JSON.parse(localStorage.getItem(KEY)||"null");if(st&&st.done&&A.name){showResults(false);}else render();}catch(e){render();}
+
+/* ================= TOOLKIT ================= */
+function on(ids,fn){ids.forEach(function(id){$(id).addEventListener("input",fn);});fn();}
+
+on(["cMonthly","cYears","cRate","cBetter"],function(){
+  var m=num($("cMonthly").value),y=num($("cYears").value,1),r=num($("cRate").value)/100,b=num($("cBetter").value)/100;
+  var s=simulate(0,m,r,y*12,0,0),fv=s[s.length-1],paid=m*y*12,mult=Math.pow(1+b,365);
+  $("cOut").innerHTML='<div class="num tnum">'+eur(fv)+'</div><p>You put in '+eur(paid)+'. Growth adds <b>'+eur(fv-paid)+'</b>, '+(paid?Math.round((fv-paid)/paid*100):0)+'% on top of what you saved.</p><p>Getting '+(b*100).toFixed(1)+'% better every day for a year makes you about <b>'+(mult>=100?Math.round(mult):mult.toFixed(1))+' times</b> better than today.</p>';
+});
+on(["fExp","fHave","fSave","fRate"],function(){
+  var e=num($("fExp").value),have=num($("fHave").value),sv=num($("fSave").value),r=num($("fRate").value)/100;
+  var fi=e*12*25,s=simulate(have,sv,r,70*12,0,0),y=yearsTo(s,fi),pct=fi?Math.min(100,have/fi*100):0;
+  $("fOut").innerHTML='<div class="num tnum">'+eur(fi)+'</div><p>You’re '+pct.toFixed(1)+'% of the way there. '+(y<0?"At this pace it takes more than 70 years. Raise what you invest or lower what you spend.":"At this pace you get there in <b>"+y+" year"+(y===1?"":"s")+"</b>.")+'</p><div class="bar" aria-hidden="true"><i style="width:'+pct+'%;background:var(--gold)"></i><i style="flex:1;background:var(--line)"></i></div>';
+});
+on(["wSleep","wWork","wChores","wScreen"],function(){
+  var sl=num($("wSleep").value)*7,wk=num($("wWork").value),ch=num($("wChores").value)*7,sc=num($("wScreen").value)*7,left=168-sl-wk-ch-sc;
+  var parts=[[sl,"var(--forest)","Sleep"],[wk,"var(--forest-2)","Work"],[ch,"var(--muted)","Life admin"],[sc,"var(--coral)","Screens"],[Math.max(0,left),"var(--gold)","Free"]];
+  $("wOut").innerHTML='<div class="num tnum">'+(left<0?"Over by "+Math.round(-left)+" h":Math.round(left)+" free hours")+'</div><p>'+(left<0?"Your week has more in it than 168 hours. Something is being double-counted, or something is giving.":"That’s "+(left/7).toFixed(1)+" hours a day. Moving just half your screen time would give you "+Math.round(sc/2)+" extra hours a week, "+Math.round(sc/2*52)+" a year.")+'</p>'+
+   '<div class="bar" aria-hidden="true">'+parts.map(function(p){return '<i style="width:'+(p[0]/168*100)+'%;background:'+p[1]+'"></i>';}).join("")+'</div><div class="keys">'+parts.map(function(p){return '<span style="--c:'+p[1]+'">'+p[2]+' '+Math.round(p[0])+'h</span>';}).join("")+'</div>';
+});
+(function(){var d=new Date();d.setMonth(d.getMonth()+6);$("gDate").value=d.toISOString().slice(0,10);})();
+on(["gWhat","gAmount","gUnit","gNow","gDate"],function(){
+  var what=$("gWhat").value.trim()||"my goal",amt=num($("gAmount").value),unit=$("gUnit").value.trim(),now=num($("gNow").value),dt=new Date($("gDate").value);
+  var weeks=Math.max(0,(dt-new Date())/6048e5),gap=Math.max(0,amt-now),per=weeks>0?gap/weeks:0;
+  if(!isFinite(dt)||weeks<=0){$("gOut").innerHTML='<p>Pick a deadline in the future.</p>';return;}
+  var dstr=dt.toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"});
+  $("gOut").innerHTML='<p class="serif" style="font-size:1.35rem;line-height:1.3;margin:0">“I will '+esc(what.charAt(0).toLowerCase()+what.slice(1))+': reach '+amt.toLocaleString("en-US")+' '+esc(unit)+' by '+dstr+'.”</p><p>'+Math.round(weeks)+' weeks to go. You need <b>'+(per>=10?Math.ceil(per).toLocaleString("en-US"):per.toFixed(1))+' '+esc(unit)+' a week</b>'+(gap===0?" — you’re already there.":", or "+(per/7>=10?Math.ceil(per/7):(per/7).toFixed(1))+" a day.")+'</p><div class="bar" aria-hidden="true"><i style="width:'+(amt?Math.min(100,now/amt*100):0)+'%;background:var(--ok)"></i><i style="flex:1;background:var(--line)"></i></div>';
+});
+var CRIT=[["Money",4,7,5],["Happiness",5,5,8],["Growth",3,6,7],["Risk (10 = safe)",3,8,4]];
+var dec=$("dec");
+CRIT.forEach(function(c,i){dec.insertAdjacentHTML("beforeend",'<input aria-label="Criterion '+(i+1)+'" id="dc'+i+'" value="'+esc(c[0])+'"><input aria-label="Weight '+(i+1)+'" id="dw'+i+'" type="number" min="1" max="5" value="'+c[1]+'"><input aria-label="Option A score '+(i+1)+'" id="da'+i+'" type="number" min="1" max="10" value="'+c[2]+'"><input aria-label="Option B score '+(i+1)+'" id="db'+i+'" type="number" min="1" max="10" value="'+c[3]+'">');});
+var dIds=["dA","dB"];CRIT.forEach(function(c,i){dIds.push("dc"+i,"dw"+i,"da"+i,"db"+i);});
+on(dIds,function(){
+  var sa=0,sb=0,mx=0;CRIT.forEach(function(c,i){var w=num($("dw"+i).value);sa+=w*num($("da"+i).value);sb+=w*num($("db"+i).value);mx+=w*10;});
+  var an=esc($("dA").value||"Option A"),bn=esc($("dB").value||"Option B"),pa=mx?Math.round(sa/mx*100):0,pb=mx?Math.round(sb/mx*100):0,diff=Math.abs(pa-pb);
+  $("dOut").innerHTML='<div class="num">'+(diff<4?"Too close to call":(pa>pb?an:bn)+" wins")+'</div><p>'+an+' scores '+pa+'%, '+bn+' scores '+pb+'%. '+(diff<4?"When it’s this close, flip a coin, and notice which side you’re secretly hoping for. That’s your answer.":"If that result disappoints you, one of your weights is wrong. Your gut just told you what really matters.")+'</p>';
+});
+on(["bBal","bRate","bPay","bExtra"],function(){
+  var bal=num($("bBal").value),r=num($("bRate").value)/100/12,pay=num($("bPay").value),ex=num($("bExtra").value);
+  function run(p){var b=bal,m=0,int=0;while(b>0.005&&m<600){var it=b*r;if(p<=it&&m===0)return null;int+=it;b=b+it-p;m++;}return m>=600?null:{m:m,int:int};}
+  var a=run(pay),c=run(pay+ex);
+  function when(m){var d=new Date();d.setMonth(d.getMonth()+m);return d.toLocaleDateString("en-GB",{month:"long",year:"numeric"});}
+  if(!a){$("bOut").innerHTML='<div class="num" style="color:var(--coral)">Never</div><p>Your payment doesn’t cover the interest, so the debt keeps growing. Pay at least '+eur(bal*r+1)+' a month.</p>';return;}
+  $("bOut").innerHTML='<div class="num tnum">Debt-free in '+when(a.m)+'</div><p>That’s '+a.m+' months, and you pay <b>'+eur(a.int)+'</b> in interest.</p>'+(c&&ex>0?'<p>Add '+eur(ex)+' a month and you’re free in <b>'+when(c.m)+'</b>, '+(a.m-c.m)+' months sooner, saving <b>'+eur(a.int-c.int)+'</b>.</p>':'');
+});
+var PROMPTS=["What would you do this year if you knew you couldn’t fail?","Which one habit, if you kept it for a year, would change everything else?","Who do you become when nobody is watching you?","What are you pretending not to know?","If your life stayed exactly the same for five more years, how would you feel?","What did you love doing at ten years old that you stopped doing?","Which expense in your life brings you the least joy per euro?","What would “enough” look like for you, in actual numbers?","Who are the five people you spend the most time with, and are they pulling you up?","What’s one conversation you’ve been avoiding?","What would you stop doing if you were twice as brave?","Which promise to yourself have you broken most often, and why?","What is something small you could finish today?","Where are you waiting for permission you don’t actually need?","What will you be glad you started when you look back in ten years?","If you had to teach one thing tomorrow, what would it be?","What does a perfect ordinary Tuesday look like for you?","What are you busy with that doesn’t actually matter?","What do you want more of: money, time or energy? What would you trade for it?","Who would you thank today if you knew you’d never see them again?"];
+var pi=new Date().getDate()%PROMPTS.length;
+function showP(){$("pText").textContent=PROMPTS[pi];}
+$("pNew").addEventListener("click",function(){var n;do{n=Math.floor(Math.random()*PROMPTS.length);}while(n===pi);pi=n;showP();});
+showP();
+})();
+</script>
+</body>
+</html>
